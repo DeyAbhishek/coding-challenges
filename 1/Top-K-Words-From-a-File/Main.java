@@ -2,7 +2,7 @@ import java.util.*;
 public class Main{
 
     public static void main(String[] args){
-		String[] str = {"aa", "bb", "aa", "aa", "cc", "dd", "cc", "bb", "bb", "bb"}; //As of now, taking a string array instead of reading from FILE
+		String[] str = {"aa", "bb", "aa", "aa", "cc", "dd", "cc", "bb", "bb", "bb"}; //As of now, taking an array of string instead of reading from FILE
 		System.out.println(TopK(str, 2));	
 
 	}
