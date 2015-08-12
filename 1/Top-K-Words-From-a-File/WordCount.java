@@ -20,7 +20,7 @@ public class WordCount implements Comparable<WordCount>{
 	
 	public int compareTo(WordCount ob){
 		
-			return ob.count - this.count;
+			return ob.count - this.count;  //Since I want the result in DESCending order
 		
 	}
 
