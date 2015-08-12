@@ -27,7 +27,7 @@ public class Main{
 	
 			}
 		}
-		List<WordCount> set = new ArrayList<WordCount>(map.keySet());
+		List<WordCount> set = new ArrayList<WordCount>(map.keySet());  //Created a List out of LeySet of the hashmap
 		Collections.sort(set);
 
 		String str2 = "";
