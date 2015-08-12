@@ -16,7 +16,8 @@ public class Main{
 			   
 			int count = map.get(new WordCount(s, 0)) + 1;
 	
-			map.remove(new WordCount(s, count-1));
+			map.remove(new WordCount(s, count-1));  //We need to remove previous entry since HashMap does NOT update the key 
+								//when new entry with the same key is put again
 			map.put(new WordCount(s, count), count);
 		
 			}
