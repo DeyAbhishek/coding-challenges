@@ -28,6 +28,8 @@ public class Main{
 			}
 		}
 		List<WordCount> set = new ArrayList<WordCount>(map.keySet());  //Created a List out of KeySet of the hashmap
+						//We are taking LIST because we can use Collections.sort() only on List.
+						//We could have also taken SORTEDSET instead //
 		Collections.sort(set);
 		//Collections.reverse(set); //NO nEED to reverse since the compareTo of WordCount class already sorts in DESCending order
 		String str2 = "";
