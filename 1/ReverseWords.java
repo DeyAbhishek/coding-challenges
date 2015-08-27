@@ -83,7 +83,8 @@ public class ReverseWords {
 		while(count >= 0){
 			String word = arr[count];
 			if(word.charAt(word.length() - 1) == ',' || word.charAt(word.length() - 1) == '!'){
-				helper.append(word.substring(0, word.length() - 1)).reverse().append(word.charAt(word.length() - 1));
+				helper.append(word.substring(0, word.length() - 1)).reverse()
+										   .append(word.charAt(word.length() - 1));
 			}
 			else{
 				helper.append(arr[count]).reverse();
