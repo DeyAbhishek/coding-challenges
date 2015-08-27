@@ -15,7 +15,7 @@ public class ReverseWords {
 			System.out.println(reverseWords3NotPunctuation(input));   // repoleveD! ehT morF dlroW, olleH
 	}
 	
-	private static String reverseWords1(String str){
+	private static String reverseWords1(String str){	// olleH ,dlroW morF ehT !repoleveD
 		String[] arr = str.split("\\s");
 		int count = 0, len = arr.length - 1;
 		StringBuilder helper = new StringBuilder();
@@ -29,7 +29,7 @@ public class ReverseWords {
 		return sb.toString();
 	}
 	
-	private static String reverseWords2(String str){
+	private static String reverseWords2(String str){	// Developer! The From World, Hello
 		String[] arr = str.split("\\s");
 		int count = arr.length - 1;
 		StringBuilder sb =new StringBuilder();
@@ -41,7 +41,7 @@ public class ReverseWords {
 		}
 	
 	
-	private static String reverseWords3(String str){
+	private static String reverseWords3(String str){	// !repoleveD ehT morF ,dlroW olleH
 		String[] arr = str.split("\\s");
 		int count = arr.length - 1;
 		StringBuilder helper = new StringBuilder();
@@ -55,7 +55,7 @@ public class ReverseWords {
 		return sb.toString();
 	}
 	
-	private static String reverseWords1NotPunctuation(String str){
+	private static String reverseWords1NotPunctuation(String str){	// olleH dlroW, morF ehT repoleveD!
 		String[] arr = str.split("\\s");
 		int count = 0, len = arr.length - 1;
 		StringBuilder helper = new StringBuilder();
@@ -75,7 +75,7 @@ public class ReverseWords {
 		return sb.toString();
 	}
 	
-	private static String reverseWords3NotPunctuation(String str){
+	private static String reverseWords3NotPunctuation(String str){		// repoleveD! ehT morF dlroW, olleH
 		String[] arr = str.split("\\s");
 		int count = arr.length - 1;
 		StringBuilder helper = new StringBuilder();
