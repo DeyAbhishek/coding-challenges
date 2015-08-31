@@ -1,4 +1,7 @@
-public class PostOrderBinaryTreeIteratorImpl implements PostOrderBinaryTreeIterator {  
+// The below code is not originally mine.
+// Source: http://n00tc0d3r.blogspot.com/2013/08/implement-iterator-for-binarytree-i-in.html
+
+  public class PostOrderBinaryTreeIteratorImpl implements PostOrderBinaryTreeIterator {  
    Stack<TreeNode> stack = new Stack<TreeNode>();  
    
    /** find the first leaf in a tree rooted at cur and store intermediate nodes */  
