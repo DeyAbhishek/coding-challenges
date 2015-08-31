@@ -10,10 +10,16 @@
        stack.push(cur);  
        cur = cur.left;  
      }  
-     
+   }
    
-   
-   private class InOrderBinaryTreeIterator<Integer> extends Iterator<Integer>{
+ public class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode(int x) { val = x; }
+ }
+
+   public class InOrderBinaryTreeIterator<TreeNode> extends Iterator<TreeNode>{
    /** Constructor */  
    public InOrderBinaryTreeIterator(TreeNode root) {  
      pushLeftChildren(root);  
@@ -43,7 +49,7 @@
      throw new UnsupportedOperationException("remove() is not supported.");  
    }  
  } 
-   }
+   
  // This iterator takes extra spaces for the stack, which is O(h) at worst case, where h is the height of the tree.
 
 
