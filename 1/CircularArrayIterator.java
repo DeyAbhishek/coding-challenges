@@ -49,7 +49,7 @@ public void set(int i, T item) {
  }
 
  @Override
- public boolean hasNextQ {
+ public boolean hasNext() {
  return _current < items.length - 1;
  }
 
@@ -61,7 +61,7 @@ public void set(int i, T item) {
  }
 
   @Override
- public void removeQ {
+ public void remove() {
  throw new UnsupportedOperationException("...");
  }
  }
