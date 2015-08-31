@@ -17,13 +17,13 @@
      pushLeftChildren(root);  
    }  
    
-   /** {@inheritDoc} */  
+     
    @Override  
    public boolean hasNext() {  
      return !stack.isEmpty();  
    }  
    
-   /** {@inheritDoc} */  
+    
    @Override  
    public Integer next() {  
      if (!hasNext()) {  
