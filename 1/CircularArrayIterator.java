@@ -31,6 +31,8 @@ public void set(int i, T item) {
  }
 
 
+
+// Below starts the code for making the iterator
  @Override
  public Iterator<T> iterator() {
  return new CircularArrayIterator<T>(this);
