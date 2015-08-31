@@ -31,10 +31,14 @@ public class SameInorder {
 		if(!sameInorder(node1.left,node2.left, str1, str2)) return false;
 		
 		System.out.println(node1.value + "    " + node2.value);
+	
+	
 		if(node1.value != node2.value) return false;
+	
 		str1+= "  " + Integer.toString(node1.value);
 		str2+= "  " + Integer.toString(node2.value);
 		
+	
 		if(!sameInorder(node1.right, node2.right, str1, str2)) return false;
 		
 		return true;
