@@ -1,3 +1,6 @@
+// The below code is not originally mine.
+// Source: http://n00tc0d3r.blogspot.com/2013/08/implement-iterator-for-binarytree-i-in.html
+
  public class InOrderBinaryTreeIteratorImpl implements InOrderBinaryTreeIterator {  
    Stack<TreeNode> stack = new Stack<TreeNode>();  
    
