@@ -1,3 +1,6 @@
+// The below code is not originally mine.
+// Source: http://isites.harvard.edu/fs/docs/icb.topic786616.files/binary_tree_iterator.pdf
+
 /** Returns a preorder iterator for this tree. */
  public LinkedTreeIterator preorderIterator() {
  return new PreorderIterator();
