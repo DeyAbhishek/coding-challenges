@@ -1,7 +1,3 @@
-class PreOrderIterator{
-
-
-
 /** Returns a preorder iterator for this tree. */
  public LinkedTreeIterator preorderIterator() {
  return new PreorderIterator();
@@ -46,4 +42,4 @@ class PreOrderIterator{
  return key;
  }
  }
- }
+ 
