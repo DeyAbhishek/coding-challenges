@@ -19,7 +19,7 @@
   TreeNode(int x) { val = x; }
  }
 
-   public class InOrderBinaryTreeIterator<TreeNode> extends Iterator<TreeNode>{
+   public class InOrderBinaryTreeIterator<TreeNode> implements Iterator<TreeNode>{
    /** Constructor */  
    public InOrderBinaryTreeIterator(TreeNode root) {  
      pushLeftChildren(root);  
