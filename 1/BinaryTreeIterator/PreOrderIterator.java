@@ -35,7 +35,7 @@
  parent = parent.parent;
  }
  if (parent == null)
- nextNode = null; // the traversal is complete
+ nextNode = null;  // the traversal is complete
  else
  nextNode = parent.right;
  }
