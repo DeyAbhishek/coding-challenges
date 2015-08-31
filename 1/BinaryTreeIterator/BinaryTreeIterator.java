@@ -1,7 +1,7 @@
 import java.util.Stack;
 import java.util.Iterator;
 
-public class TreeIterator<T> implements Iterator<T> {
+public class BinaryTreeIterator<T> implements Iterator<T> {
     /* the class variables keep track of how much the iterator
      * has done so far, and what remains to be done.
      * root is null when the iterator has not been initialized,
