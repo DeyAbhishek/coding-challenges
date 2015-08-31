@@ -31,8 +31,8 @@ public void set(int i, T item) {
  }
 
 
-
- public Iterator<T> iteratorQ {
+ @Override
+ public Iterator<T> iterator() {
  return new CircularArrayIterator<T>(this);
  }
 
