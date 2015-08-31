@@ -32,7 +32,7 @@ public void set(int i, T item) {
 
 
 
-// Below starts the code for making the iterator
+// Below starts the code for making the iterator....See the @Overrides
  @Override
  public Iterator<T> iterator() {
  return new CircularArrayIterator<T>(this);
