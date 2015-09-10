@@ -7,7 +7,7 @@
 
 public static int[] computeMissingNumberAndDuplicate(int[] input)
 {
-  //Say, int[] input= {1, 2, 3, 4, 5, 3, 7};  //6 has been replaced by 3. diff will be 3
+  //Say, int[] input= {1, 2, 3, 4, 5, 3, 7};  //6 has been replaced by 3. diff will be -3
   int n = input.length;
   int expectedSum = n * (n + 1) / 2;
   int actualSum = 0;
