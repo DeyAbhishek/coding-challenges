@@ -1,3 +1,5 @@
+// Link to full code: http://goo.gl/Y4A2Cd
+
 // There are numbers from 1 to N in an array. out of these, one of the number gets duplicated and one is missing. 
 // The task is to find out the duplicate number. 
 // Conditions: you have to do it in O(n) time without using any auxilary space (array, bitsets, maps etc..).
@@ -40,4 +42,4 @@ public static int[] computeMissingNumberAndDuplicate(int[] input)
   
 }
 
-Link to full code: http://goo.gl/Y4A2Cd
+
