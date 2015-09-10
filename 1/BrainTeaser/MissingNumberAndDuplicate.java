@@ -3,9 +3,9 @@
 // Conditions: you have to do it in O(n) time without using any auxilary space (array, bitsets, maps etc..).
 
 
-public int[] computeMissingNumberAndDuplicate(int[] input)
+public static int[] computeMissingNumberAndDuplicate(int[] input)
 {
-  //Say, int[] input= {1, 2, 3, 4, 5, 3, 7};  //6 has been replaced by 3. diff will be -3
+  //Say, int[] input= {1, 2, 3, 4, 5, 3, 7};  //6 has been replaced by 3. diff will be 3
   int n = input.length;
   int expectedSum = n * (n + 1) / 2;
   int actualSum = 0;
@@ -16,23 +16,20 @@ public int[] computeMissingNumberAndDuplicate(int[] input)
   actualSum += input[i];
   }
   //now,  a = 3 ^ 6
-  int diff = expectedSum - actualSum;
-
-  
-  if (diff == 0) throw new Exception("Wrong Input");
-  
-  else if(diff < 0){
+  int diff =  actualSum - expectedSum;;
+  if(diff < 0){
   diff = -diff;
-  for(int i = diff + 1; diff <= n; i++){
-  if (i ^ (i - diff) ^ a == 0)
+  for(int i = diff + 1; i <= n; i++){
+  if ((i ^ (i - diff) ^ a) == 0){
   res[0] = i; // MISSING number
   res[1] = i - diff; // DUP
   }
   }
+  }
   
-  else{
+  else if (diff > 0){
   for(int i = 1; i <= n - diff; i++){
-  if(i ^ (i + diff) ^ a == 0){
+  if((i ^ (i + diff) ^ a) == 0){
   res[0] = i;  //MISSING
   res[1] = i + diff;  // DUP
   }
@@ -42,3 +39,5 @@ public int[] computeMissingNumberAndDuplicate(int[] input)
   return res;
   
 }
+
+Link to full code: http://goo.gl/Y4A2Cd
