@@ -1,4 +1,4 @@
- public class CircularArrayIterator<T> implements Iterable<T> {
+ public class CircularArray<T> implements Iterable<T> {
 
  private T[] items;
  private int head = 0;
