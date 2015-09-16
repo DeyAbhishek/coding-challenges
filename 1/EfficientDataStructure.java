@@ -1,3 +1,5 @@
+// Link to the compiled code: http://goo.gl/EOqKpw
+
 // A data structure with insertion, deletion, conains, random accesss all in O(1) time :)  \m/
 // only works with distinct elements
 
@@ -9,7 +11,7 @@ public class EfficientDataStructure{
     HashMap<String, Integer> map;
     int count;
     
-    public Test(int size){
+    public EfficientDataStructure(int size){
     arr = new String[size];    
     map = new HashMap<String, Integer>();
     count = -1;
