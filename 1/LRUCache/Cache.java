@@ -30,11 +30,20 @@ public Class Cache{
     }
     
     public void insertContent(String pageNumber, String pageContent){
+        
+        if(map.containsKey(pageNumber)){
+            Node node = map.get(pageNumber);
+            node.pageContent = pagecontent;  //refresh content;
+            remove(node);
+            attachFront(node);
+            map.put(pageNumber, node);
+            return;
+        }
         count++;
+         Node node = new Node();
+         node.pageNumber = pageNumber; 
+         node.pageContent = pageContent;
         if(count == 1){
-            Node node = new Node();
-            node.pageNumber = pageNumber; 
-            node.pageContent = pageContent;
             node.prev = null;
             node.next = null;
             head = node;
@@ -43,11 +52,9 @@ public Class Cache{
             return;
         }
         
-        if(count == 2){
-            //TODO
-        }
+        attachFront(node);
+        map.put(pageNumber, node);
         
-        //TODO
     }
     
     private void remove(Node node){
