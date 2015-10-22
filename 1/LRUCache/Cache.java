@@ -55,11 +55,18 @@ public Class Cache{
         attachFront(node);
         map.put(pageNumber, node);
         
+        if(count > size){
+            map.remove(tail.pageNumber);
+            remove(tail);
+            count--;
+        }
+        
     }
     
     private void remove(Node node){
         if(node.pageNumber == tail.pageNumber){
             node.prev.next = null;
+            tail = tail.prev;
             return;
         } 
         node.prev.next = node.next;
