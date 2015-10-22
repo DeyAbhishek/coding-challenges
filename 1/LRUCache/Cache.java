@@ -29,6 +29,25 @@ public Class Cache{
         return node.pageContent;
     }
     
+    public void insertContent(String pageNumber, String pageContent){
+        count++;
+        if(count == 1){
+            Node node = new Node();
+            node.pageNumber = pageNumber; 
+            node.pageContent = pageContent;
+            node.prev = null;
+            node.next = null;
+            head = node;
+            tail = node;
+            map.put(pageNumber, node);
+            return;
+        }
+        
+        if(count == 2){
+            //TODO
+        }
+    }
+    
     private void remove(Node node){
         if(node.pageNumber == tail.pageNumber){
             node.prev.next = null;
