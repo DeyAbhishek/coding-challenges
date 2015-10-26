@@ -12,4 +12,6 @@ public class BuildBinaryTreeFromInorderPreorder{
     return root;
   
   } 
+  // HOW TO USE:
+  // BuildBinaryTreeFromInorderPreorder(inorderArray, preorderArray, 0, inorderArray.length - 1, 0)
 }
