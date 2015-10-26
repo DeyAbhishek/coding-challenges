@@ -1,9 +1,9 @@
 public class BuildBinaryTreeFromInorderPreorder{
 
-  public Node BuildBinaryTreeFromInorderPreorder(Node[] inorderArray, Node[] preorderArray, int inorderStart, 
+  public Node BuildBinaryTreeFromInorderPreorder(char[] inorderArray, char[] preorderArray, int inorderStart, 
                                                                               int inorderEnd, int preorderIndex){
     if(inorderStart > inorderEnd) return null;
-    Node root = preorderArray[preorderIndex];
+    Node root = new Node(preorderArray[preorderIndex]);
     if (inorderStart == inorderEnd) return root;
     int rootIndex = search(inorderArray, root);
     preorderIndex++;
