@@ -25,8 +25,5 @@ public class DeadlockPreventionSWAP{
       else other.swapValue(this);
     }
     //you can make swapValue(...) private now
-    
-    
-
 
 }
