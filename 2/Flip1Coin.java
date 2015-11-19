@@ -1,4 +1,5 @@
-// Return maximum number of adjacent pair of coins when one coin is flipped
+// Return maximum number of adjacent pair of coins with same face (either head or tail)
+// when only one coin is flipped.
 
 function solution(A) {  //A -> array of coins
   var reversed = false, adjacency = 0, i = 1;
