@@ -1,5 +1,6 @@
 //merging sorted streams
-//Given k sorted streams where each stream could possibly be infinite in length, describe an efficient algorithm to merge the k streams into a new stream (also in sorted order).
+//Given k sorted streams where each stream could possibly be infinite in length, describe an efficient algorithm to merge the k 
+//streams into a new stream (also in sorted order).
 
 
 
