@@ -1,0 +1,33 @@
+//merging sorted streams
+//Given k sorted streams where each stream could possibly be infinite in length, describe an efficient algorithm to merge the k streams into a new stream (also in sorted order).
+
+
+
+Solution I (Divide and Conquer) :
+
+                             list1
+                      listA /
+                     /  .   \
+                    /   .    list2
+                   /    .      .
+         Merged   /     .      .
+         List     \     .      .
+                   \
+                    \   .    listk-1
+                      listC /
+                            \
+                             listk
+
+
+This solution is not efficient, Complexity is 2k-1 - 1
+
+Solution II (Using buckets)
+
+Use technique similar to Bucket sort, maximum complexity = O(N2)
+
+Solution III (Using Heap)
+
+Step1: Take first element of all k streams and build a min heap of them. => O(k)
+Step2: Remove the min element (elem at top of heap) from the heap and put in the new stream. => O(log k)
+Step3: Put new element in heap from the stream to which the prev elem belongs (which was at heap min). => O(log k)
+Step4: continue above steps till we exhaust all the streams. If all streams in combination have n elements then order is O(n log(k))
