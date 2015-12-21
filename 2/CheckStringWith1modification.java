@@ -7,6 +7,10 @@ banana
 and array is
 [bana, apple, banaba, bonanza, banamf]
 and the outpost should be true as banana and banaba are one character difference.
+
+The aray
+[bana, apple, cbanana, bonanza, banamf]
+also returns true as banana and cbanana are one character difference.
 */
 
 
@@ -16,31 +20,33 @@ public class CheckStringWith1modification{
     public static void main(String[] args){
 	
     	String[] arr = {"bana", "apple", "banaba", "bonanza", "banamf"};
-		System.out.println(checkStringWith1modification("banana", arr));
+    	String[] arr2 = String[] arr = {"bana", "apple", "cbanana", "bonanza", "banamf"};
+	System.out.println(checkStringWith1modification("banana", arr));
+	System.out.println(checkStringWith1modification("banana", arr));
 	}
 	 public static boolean checkStringWith1modification(String str, String[] arr){
-    	int len = str.length();
+    int len = str.length();
     	
     	for(String s : arr){
     		int l = s.length();
     		if(Math.abs(len - l) > 1) continue;
-    		boolean samelength = false;
-    		if(Math.abs(len - l) == 0) samelength = true; 
     		int count1=0;
     		int count2 = 0;
     		int diff= 0;
     		while(count1 <= len - 1 && count2 <= l - 1){
-    			if(str.charAt(count1) == s.charAt(count2)){
+    			if(str.charAt(count1) == s.charAt(count2)){  //if both of same length then increment both counter
     				count2++;
+    				count1++;
     			}else{
-    				diff++;
-    				if(samelength) count2++;
+    				diff++;  //else there is character difference
+    				if(l - len > 0) count2++; //if the array string is of greater length then increase array string counter (banana and cbanana)
+    				else if (l - len == 0){ count1++; count2++;} ////if both strings are of equal length then increase both counters
+    										//eg. banana and banaba OR banana and banacc
+    				else count1++; //if the input string is of greater length then increase array string counter (banana and bana)
     			}
-    			count1++;
     		} //end while
-    		if(diff == 1) 
-				return true;
+    		if(diff == 1) 	return true;
     	} //end foreach
-    	return false;
+    	return false;  //not found string with 1 character diff
     }
 }
