@@ -11,14 +11,14 @@ and the outpost should be true as banana and banaba are one character difference
 
 
 import java.util.*;
-public class CheckStringWithAtMost1modification{
+public class CheckStringWith1modification{
 
     public static void main(String[] args){
 	
     	String[] arr = {"bana", "apple", "banaba", "bonanza", "banamf"};
-		System.out.println(checkStringWithAtMostNmodification("banana", arr));
+		System.out.println(checkStringWith1modification("banana", arr));
 	}
-	 public static boolean checkStringWithAtMost1modification(String str, String[] arr){
+	 public static boolean checkStringWith1modification(String str, String[] arr){
     	int len = str.length();
     	
     	for(String s : arr){
