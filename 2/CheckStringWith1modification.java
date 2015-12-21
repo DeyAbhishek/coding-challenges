@@ -50,3 +50,18 @@ public class CheckStringWith1modification{
     	return false;  //not found string with 1 character diff
     }
 }
+
+
+/*
+The key concept is:
+
+1. When the characters of both the strings at the current respective indices or counters match, then increment counter for both the strings
+
+2. When the characters at the current indices do not match:
+
+Increase the counter for the string whose length is greater.
+
+If the lengths are equal then increment counters for both the strings.
+
+Here, by "both the strings" I mean the input string with which we need to compare and the string in the array that we are comparing with the input string.
+*/
