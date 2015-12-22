@@ -15,7 +15,7 @@ also returns true as banana and cbanana are one character difference.
 
 
 import java.util.*;
-public class CheckStringWith1modification{
+public class CheckStringWithOneCharacterDifference{
 
     public static void main(String[] args){
 	
@@ -24,8 +24,10 @@ public class CheckStringWith1modification{
 	System.out.println(checkStringWith1modification("banana", arr));
 	System.out.println(checkStringWith1modification("banana", arr));
 	}
-	 public static boolean checkStringWith1modification(String str, String[] arr){
-    int len = str.length();
+	
+	
+   public static boolean checkStringWith1modification(String str, String[] arr){
+	   int len = str.length();
     	
     	for(String s : arr){
     		int l = s.length();
