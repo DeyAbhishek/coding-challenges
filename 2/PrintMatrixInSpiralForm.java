@@ -36,7 +36,7 @@ public class PrintMatrixInSpiralForm{
 		    			//System.out.println(last + "  " + j + "    ::  " + matrix[last][j] + "  ->  ");
 		    			System.out.print(matrix[last][j] + "  ->  ");
 		    		}
-		    		for(j = last - 1; j > first; j--){  //notice it is j > first NOT >= to avoid reprint (both sides//2 avoids)
+		    		for(j = last - 1; j >= first - 1; j--){  //notice it is j >= first - 1 NOT >= first to avoid reprint (both sides//2 avoids)
 		    			System.out.print(matrix[j][first] + "  ->  ");
 		    		}
     	}  // end for
