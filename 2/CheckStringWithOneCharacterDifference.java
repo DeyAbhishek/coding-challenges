@@ -27,9 +27,9 @@ public class CheckStringWithOneCharacterDifference{
 	
 	
    public static boolean checkStringWith1modification(String str, String[] arr){
-	   int len = str.length();
+	        int len = str.length();
     	
-    	for(String s : arr){
+        	for(String s : arr){
     		int l = s.length();
     		if(Math.abs(len - l) > 1) continue;
     		int count1=0;
