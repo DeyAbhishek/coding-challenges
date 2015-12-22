@@ -26,7 +26,7 @@ public class PrintMatrixInSpiralForm{
 		    		int last = len - 1 - i;
 		    		int j = first;
 		    		for(j = first; j <= last; j++){  //no need to take care of avoiding reprint (NO avoid)
-		    			System.out.print( matrix[i][j] + "  ->  ");
+		    			System.out.print( matrix[first][j] + "  ->  ");
 		    		}
 		    		for(j = first + 1; j <= last; j++){  //avoiding reprint taken care of by doing j = first + 1 NOT j = first (1 avoid)
 		    			System.out.print(matrix[j][last] + "  ->  ");
