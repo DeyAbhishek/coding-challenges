@@ -1,19 +1,15 @@
 
 import java.util.*;
 public class PrintMatrixInSpiralForm{
-
-    public static void main(String[] args){
-	
-    	int[][] matrix = {{1, 2, 3}, 
+     public static void main(String[] args){
+	int[][] matrix = {{1, 2, 3}, 
     			  {8, 9, 4}, 
     			  {7, 6, 5}};
-    			  
     	int[][] matrix2 = {{1, 2, 3, 4}, 
     			   {12, 13, 14, 5}, 
     			   {11, 16, 15, 6}, 
     			   {10, 9, 8, 7}};
-    			   
-    	 printSpiral(matrix);
+    	printSpiral(matrix);
     	 printSpiral(matrix2);
 	}
     
