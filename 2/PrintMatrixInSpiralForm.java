@@ -28,15 +28,18 @@ public class PrintMatrixInSpiralForm{
 		    		for(j = first; j <= last; j++){  //no need to take care of avoiding reprint (NO avoid)
 		    			System.out.print( matrix[first][j] + "  ->  ");
 		    		}
-		    		for(j = first + 1; j <= last; j++){  //avoiding reprint taken care of by doing j = first + 1 NOT j = first (1 avoid)
+		    		for(j = first + 1; j <= last; j++){  // avoiding reprint taken care of by doing j = first + 1 
+		    						     // NOT j = first (1 avoid)
 		    			System.out.print(matrix[j][last] + "  ->  ");
 		    		}
 		    		
-		    		for(j = last - 1; j >= first; j--){ //avoiding reprint taken care of by doing j = last -1 NOT j = last (1 avoid)
+		    		for(j = last - 1; j >= first; j--){ // avoiding reprint taken care of by doing j = last -1 
+		    					            // NOT j = last (1 avoid)
 		    			//System.out.println(last + "  " + j + "    ::  " + matrix[last][j] + "  ->  ");
 		    			System.out.print(matrix[last][j] + "  ->  ");
 		    		}
-		    		for(j = last - 1; j >= first - 1; j--){  //notice it is j >= first - 1 NOT >= first to avoid reprint (both sides//2 avoids)
+		    		for(j = last - 1; j >= first - 1; j--){  // notice it is j >= first - 1 NOT >= first 
+		    							 // to avoid reprint (both sides//2 avoids)
 		    			System.out.print(matrix[j][first] + "  ->  ");
 		    		}
     	}  // end for
