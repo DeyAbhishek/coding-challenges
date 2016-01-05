@@ -11,3 +11,16 @@ SOLUTION:
 // First create an Inorder Iterator for binary tree.
 // Refer to  https://github.com/DeyAbhishek/CodingChallenges/tree/master/1/BinaryTreeIterator
 // Then using hasNext() and next() you can compare both the trees simultaneously.
+
+/*
+bool same_inorder(node *a,node *b) {
+    bst_iterator ita(a),itb(b);
+    while (ita.has_next()&&itb.has_next()) {
+        node *ca=ita.next();
+        node *cb=itb.next();
+        if (ca->val!=cb->val)
+            return false;
+    }
+    return !ita.has_next()&&!itb.has_next();
+}
+*/
