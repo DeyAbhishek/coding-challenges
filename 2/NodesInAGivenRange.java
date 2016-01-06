@@ -1,6 +1,6 @@
 // Write a function that counts the nodes in BS-tree whose values fit in the given range.
 
-int CountNodesForRange(Node root, int min_range, int max_range) {
+public int CountNodesForRange(Node root, int min_range, int max_range) {
     if (root == NULL) return 0;
     return CountNodesForRange(root.left, min_range, max_range) +
            CountNodesForRange(root.right, min_range, max_range) +
