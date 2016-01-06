@@ -25,7 +25,11 @@ public class RearrangeArrayElements{
     				 return (int)a.charAt(0) - (int)b.charAt(0);
     			 }
     		 }
-    	 });
+    	 });		// This solution is basically IN-PLACE,
+    	 		// because Java's Arrays.sort uses a combination of quick sort
+    	 		// and insertion sort depending on the
+    	 		// nature of the data set, and both insertion and
+    	 		// quick sorts are IN-PLACE.
     	 for(String str : arr){
     		 System.out.print(str + "   ");
     	 }
