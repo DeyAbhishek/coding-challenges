@@ -146,7 +146,8 @@ Output:
 
 ======================================================================
 LEARNING:
-A very silly mistake that I was making while coding it:
+A few very silly mistake that I was making while coding it:
+1. 
 Not mapping the nodes both ways in the graph HashMap since it is an Undirected graph.
 If there is a node 1 - 3
 Then what we need to do is:
@@ -155,3 +156,7 @@ graph.put(3, 1);
 
 Instead what I was doing was like :
 graph.put(1, 3) only.
+
+2.
+Not taking the "visited" Set to mark a node when visited. So there was a potential possibility to form a infinite loop.
+Marking nodes as visited is very important while using Queue and BFS.
