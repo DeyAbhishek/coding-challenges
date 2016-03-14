@@ -1,30 +1,28 @@
 //Source of the problem statement: https://www.hackerrank.com/challenges/bfsshortreach
 /*
-Given an undirected graph consisting of NN nodes (labelled 1 to N) where a specific given node SS represents the start position and an edge between any two nodes is of length 66 units in the graph.
+Given an undirected graph consisting of NN nodes (labelled 1 to N) 
+where a specific given node S represents the start position and an edge between 
+any two nodes is of length 6 units in the graph.
 
 It is required to calculate the shortest distance from start position (Node S) to all of the other nodes in the graph.
 
-Note 1: If a node is unreachable , the distance is assumed as −1−1. 
-Note 2: The length of each edge in the graph is 66 units.
+Note 1: If a node is unreachable , the distance is assumed as −1. 
+Note 2: The length of each edge in the graph is 6 units.
 
-Input Format
+Input Format:
 
 The first line contains TT, denoting the number of test cases. 
 First line of each test case has two integers NN, denoting the number of nodes in the graph and MM, denoting the number of edges in the graph. 
 The next MM lines each consist of two space separated integers x yx y, where xx and yy denote the two nodes between which the edge exists. 
 The last line of a testcase has an integer SS, denoting the starting position.
 
-Constraints 
-1≤T≤101≤T≤10 
-2≤N≤10002≤N≤1000 
-1≤M≤N×(N−1)21≤M≤N×(N−1)2 
-1≤x,y,S≤N1≤x,y,S≤N
+Output Format:
 
-Output Format
+For each of T test cases, print a single line consisting of N−1 space-separated integers, 
+denoting the shortest distances of the N-1 nodes from starting position S. 
+This will be done for all nodes same as in the order of input 1 to N.
 
-For each of TT test cases, print a single line consisting of N−1N−1 space-separated integers, denoting the shortest distances of the N-1 nodes from starting position SS. This will be done for all nodes same as in the order of input 1 to N.
-
-For unreachable nodes, print −1−1.
+For unreachable nodes, print −1.
 
 Sample Input
 
