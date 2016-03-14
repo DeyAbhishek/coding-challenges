@@ -1,4 +1,4 @@
-Source of the problem statement: https://www.hackerrank.com/challenges/bfsshortreach
+//Source of the problem statement: https://www.hackerrank.com/challenges/bfsshortreach
 /*
 Given an undirected graph consisting of NN nodes (labelled 1 to N) where a specific given node SS represents the start position and an edge between any two nodes is of length 66 units in the graph.
 
