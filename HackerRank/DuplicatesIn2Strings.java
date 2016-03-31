@@ -9,7 +9,17 @@ import java.util.regex.*;
 public class DuplicatesIn2Strings {
 
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        /* CONCEPT: Taking a frequency array to keep track of the frequency of characters in
+           in the first string.
+           Then while iterating over the second string, I am just keeping track of the difference in the 
+           frequency of the characters that are contained in the first string.
+           So at the end the frequency array contains differences in  the number of occurances in  both the strings for the
+           characters that are present in the first string.
+           Say, string1 -> aabb => frequency[0] = 2, frequency[1] = 2 
+           string2 -> abcc
+           After iterating over string2 => frequency[0] = 1, frequency[1] = 1, frequency[2] = 0.
+           frequency[2] is unchanged since 'c' is a not a character present in string1 (frequency[2] == 0).
+           Result = frequency[0] + frequency[1] = 1 + 1 = 2*/
         Scanner scanner = new Scanner(System.in);
         int testcases = scanner.nextInt();
         int j = 0;
