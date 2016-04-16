@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/stockmax
+
 import java.util.Scanner;
 
 public class StockMaximization2 {
