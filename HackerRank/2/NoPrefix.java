@@ -98,7 +98,9 @@ public class Solution {
 
 
 /*
-Given NN strings. Each string contains only lowercase letters from a−ja−j(both inclusive). The set of NN strings is said to be GOOD SET if no string is prefix of another string else, it is BAD SET. (If two strings are identical, they are considered prefixes of each other.)
+Given NN strings. Each string contains only lowercase letters from a−ja−j(both inclusive).
+The set of NN strings is said to be GOOD SET if no string is prefix of another string else, it is BAD SET. 
+(If two strings are identical, they are considered prefixes of each other.)
 
 For example, aab, abcde, aabcd is BAD SET because aab is prefix of aabcd.
 
