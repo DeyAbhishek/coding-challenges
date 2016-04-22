@@ -6,8 +6,6 @@ import java.util.regex.*;
 
 /* BUG Fix remaing:
  * 1.  The below solutions support duplicate entry in the dictionary
- * 2.  After removing a word, the word is not getting removed from the word list 
- *     (though the word count is getting decremented)
  */
 
 public class Trie {
@@ -94,8 +92,8 @@ public class Trie {
         //System.out.println("Word Added: " + str);
 	}
 	
-	public void removeWord(String str) {
-        System.out.println("Removing "  + str + "  ....");
+public void removeWord(String str) {
+        System.out.println("Before Removing " + str + " the dictionary conatins the following words: " + Arrays.toString(listOfWords.toArray()));
 		if (str.isEmpty() || str == null) {
 			return;
 		}
@@ -109,12 +107,23 @@ public class Trie {
             //System.out.println("---- > > >  1");
             lastNode = lastNode.children.get(str.charAt(i));
             if (lastNode == null) {
+                System.out.println("Dictionary does not contain " + str);
                 return;
             }
         }
+        
+        if (!lastNode.terminates()) {
+            System.out.println(str + " is not a complete word. It is only a prefix to some other complete word. We can only remove dictionary words which form a complete word.");
+            return;
+        }
          //System.out.println(lastNode.value);
         TrieNode parentNode = lastNode;
-        while (parentNode != null && parentNode.children.size() == 0) {
+        
+        int lastIndex = str. length() - 1;  // used to remove deleted words from listOfWords
+        
+        while (parentNode != null && parentNode.children.size() == 0) {  // parentNode.children.size() == 0 because
+                                                                         // we cannot delete a node
+                                                                         // if it has some other child too
               //System.out.println("---- > > >  22");
             TrieNode t = parentNode;
             parentNode = parentNode.parent;
@@ -122,14 +131,19 @@ public class Trie {
             t.parent = null;
             //System.out.println(parentNode.value + "   "  + parentNode.terminates());
             parentNode.numOfWords--;  //**
+            lastIndex--;
             if(parentNode.terminates()) {
                 break;
             }
         }
+        lastIndex++;  //this one needs to be incremented here to be used in str.substring() in the following while loop
         while (parentNode != null) {  //decrementing the word count for all the remaining parent node
             parentNode.numOfWords--;
+            parentNode.listOfWords.remove(str.substring(lastIndex--));
             parentNode = parentNode.parent;
         }
+        
+        System.out.println("After Removing " + str + " the dictionary contains the following words: " + Arrays.toString(listOfWords.toArray()));
 	}
 	
 	public TrieNode removeChild(char child) {
@@ -282,7 +296,14 @@ public class Trie {
             return checkWord(word, true);
         }
         
-        
+        /*
+         * checkWord is id called on a node to start checking from its child nodes 
+         * if the word is present in the dictionary.
+         * The word does not contain the character on the node on which it is called.
+         * The character in the node on which this method is called is a part of  the the word.
+         * Remember root node does not contain any value.
+         * In the above context, word is being referred to as the first argument named prefix in this method.
+         */
         public boolean checkWord(String prefix, boolean isPrefix) { //isPrefix is true for Prefix
             if (prefix.isEmpty() || prefix == null) {
                 return false;
@@ -294,7 +315,7 @@ public class Trie {
                 presentNode = children.get(prefix.charAt(0));
             }
             if (prefix.length() == 1) {
-                return isPrefix || terminates();
+                return isPrefix || presentNode.terminates();
             } else {
                 return presentNode.checkWord(prefix.substring(1), isPrefix);
             }
@@ -311,7 +332,7 @@ FIND -> find
 REMOVE -> rind
 
 Sample I/P :
-16
+18
 add s
 add ssss
 add sss
@@ -323,9 +344,11 @@ find sss
 find ssss
 find sssss
 find ssssss
+rind ss
 add hack
 add hackerrank
 add hacker
 rind hackerrank
 find hack
+rind hackerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 */
