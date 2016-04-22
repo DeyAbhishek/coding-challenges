@@ -126,13 +126,14 @@ public void removeWord(String str) {
         
         int lastIndex = str. length() - 1;  // used to remove deleted words from listOfWords
         
-        while (parentNode != null && parentNode.children.size() == 0) {  // parentNode.children.size() == 0 because
+        while (parentNode.parent != null && parentNode.children.size() == 0) {  // parentNode.children.size() == 0 because
                                                                          // we cannot delete a node
                                                                          // if it has some other child too
               //System.out.println("---- > > >  22");
             TrieNode t = parentNode;
             parentNode = parentNode.parent;
-            parentNode.children.remove(t.value);
+            parentNode.children.remove(t.value);  // for this we need to have the contraint parentNode.parent != null
+                                                   // so that there is no NullPointerException
             t.parent = null;
             //System.out.println(parentNode.value + "   "  + parentNode.terminates());
             parentNode.numOfWords--;  //**
@@ -356,6 +357,23 @@ add hacker
 rind hackerrank
 find hack
 rind hackerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
+Sample I/P 2 :
+6
+add s
+add ssss
+add ssss
+add s
+rind ssss
+rind s
+
+O/P :
+ssss is already present in the dictionar. Duplicate entry not allowed.
+s is already present in the dictionar. Duplicate entry not allowed.
+Before Removing ssss the dictionary conatins the following words: [s, ssss]
+After Removing ssss the dictionary contains the following words: [s]
+Before Removing s the dictionary conatins the following words: [s]
+After Removing s the dictionary contains the following words: []
 */
 
 
