@@ -4,10 +4,6 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-/* 
- * The below chaind dictionary supports duplicate entry
- */
-
 public class Trie {
 
     public static void main(String[] args) {
