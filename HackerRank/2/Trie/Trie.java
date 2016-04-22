@@ -6,12 +6,11 @@ import java.util.regex.*;
 
 /* BUG Fix remaing:
  * 1.  The below solutions support duplicate entry in the dictionary
- * 2.  After removing a word, the owrd is not getting removed from the word list 
+ * 2.  After removing a word, the word is not getting removed from the word list 
  *     (though the word count is getting decremented)
- * 3.  checkWord is NOT working (though the CheckPrefix is working)
  */
 
-public class Contacts2 {
+public class Trie {
 
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
@@ -297,7 +296,7 @@ public class Contacts2 {
             if (prefix.length() == 1) {
                 return isPrefix || terminates();
             } else {
-                return presentNode.checkPrefix(prefix.substring(1));
+                return presentNode.checkWord(prefix.substring(1), isPrefix);
             }
             
         }
