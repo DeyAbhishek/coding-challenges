@@ -304,3 +304,29 @@ public class Contacts2 {
   }
 
 }
+
+
+/*
+ADD -> add
+FIND -> find
+REMOVE -> rind
+
+Sample I/P :
+16
+add s
+add ssss
+add sss
+add ssss
+add sssss
+find s
+find ss
+find sss
+find ssss
+find sssss
+find ssssss
+add hack
+add hackerrank
+add hacker
+rind hackerrank
+find hack
+*/
