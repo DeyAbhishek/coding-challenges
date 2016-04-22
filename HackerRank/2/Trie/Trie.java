@@ -4,8 +4,8 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-/* BUG Fix remaing:
- * 1.  The below solutions support duplicate entry in the dictionary
+/* 
+ * The below chaind dictionary supports duplicate entry
  */
 
 public class Trie {
@@ -70,6 +70,11 @@ public class Trie {
 		if (str.isEmpty() || str == null) {
 			return;
 		}
+        
+        if (checkWord(str)) {
+            System.out.println(str + " is already present in the dictionar. Duplicate entry not allowed.");
+            return;
+        }
         
         numOfWords++;  //a new word is getting added. so increment
         listOfWords.add(str);  //a new word is getting added. so add this word.
@@ -351,4 +356,13 @@ add hacker
 rind hackerrank
 find hack
 rind hackerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+*/
+
+
+/*
+Difficulties :
+1. removeWord was not removing all the required child nodes from the children map,
+	but was not able to remove the word from the listOfWords.
+2. In case of duplicate entry though there was no changes in the pointers to the children which means 
+that the duplicate entry was getting avoided (as it should be), but the word was still getting inserted in the listOfWords.
 */
