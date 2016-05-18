@@ -37,6 +37,7 @@ public class CoinChange {
         if (n > 0 && index < 0) {
             return 0;
         }
+        // you either include that coin or you don't
         long res = getResult(n, denom, index - 1, memo) + getResult(n - denom[index], denom, index, memo);
         memo.put("" + n + " " + index, res);
         return res;
