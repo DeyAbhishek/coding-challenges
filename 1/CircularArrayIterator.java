@@ -4,7 +4,7 @@
  private int head = 0;
 
  public CircularArray(int size) {
- items = (T[]> new Object[size];
+ items = (T[]) new Object[size];
 }
 
  private int convert(int index) {
