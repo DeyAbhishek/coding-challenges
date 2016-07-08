@@ -1,0 +1,37 @@
+// Given a string, find the kth most frequent words in that string
+
+This can be done in O(n) time
+
+Solution 1:
+
+Steps:
+
+Count words and hash it, which will end up in the structure like this
+var hash = {
+  "I" : 13,
+  "like" : 3,
+  "meow" : 3,
+  "geek" : 3,
+  "burger" : 2,
+  "cat" : 1,
+  "foo" : 100,
+  ...
+  ...
+Traverse through the hash and find the most frequently used word (in this case "foo" 100), then create the array of that size
+Then we can traverse the hash again and use the number of occurrences of words as array index, if there is nothing in the index, 
+create an array else append it in the array. Then we end up with an array like:
+  0   1      2            3                100
+[[ ],[ ],[burger],[like, meow, geek],[]...[foo]]
+Then just return kth element from the array.
+Solution 2:
+
+Steps:
+
+Same as above
+Use min heap and keep the size of min heap to k, and for each word in the hash we compare the occurrences of words with the min, 
+1) if it's greater than the min value, remove the min (if the size of the min heap is equal to k) and insert the number in the min heap.
+2) rest simple conditions.
+After traversing through the array, 
+we just convert the min heap to array and return the array IF we need to return the all K most frequent words.
+OR ELSE
+just do minheap.poll()  to return the Kth most frequent word.
