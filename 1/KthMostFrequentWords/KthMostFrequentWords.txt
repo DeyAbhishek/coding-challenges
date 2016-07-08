@@ -23,6 +23,8 @@ create an array else append it in the array. Then we end up with an array like:
   0   1      2            3                100
 [[ ],[ ],[burger],[like, meow, geek],[]...[foo]]
 Then just return kth element from the array.
+
+
 Solution 2:
 
 Steps:
