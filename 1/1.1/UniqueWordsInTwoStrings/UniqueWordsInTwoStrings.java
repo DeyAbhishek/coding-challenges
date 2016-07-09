@@ -24,9 +24,7 @@ public class UniqueWordsInTwoStrings {
 		list3.addAll(list1);
 		list3.addAll(list2);
 		list1.retainAll(list2);
-		list2.retainAll(list1);
 		list3.removeAll(list1);
-		list3.removeAll(list2);
 		System.out.println(list3.toString());
 	}
 
