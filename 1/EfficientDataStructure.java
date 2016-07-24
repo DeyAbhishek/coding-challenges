@@ -3,6 +3,13 @@
 // A data structure with insertion, deletion, conains, random accesss all in O(1) time :)  \m/
 // only works with distinct elements
 
+/* Take an array: 
+array[index] = element;
+
+Take a HashMap
+HashMap<Element, Index>
+*/
+
 import java.util.*;
 public class EfficientDataStructure{
 
