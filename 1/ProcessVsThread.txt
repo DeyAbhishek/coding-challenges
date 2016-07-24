@@ -1,0 +1,24 @@
+PROCESS :
+1. an instance of a program in execution.
+
+2. an independent entity to which system resources(CPU time, memory etc) are allocated.
+
+3. Each process is executed in a separate address space, and one process CANNOT access 
+the variables and data structures of another process.
+
+4. if a process wishes to access another process' resources, inter-process 
+communications(like, pipes, files, sockets etc) have to be used.
+
+5. process resides in HEAP. 
+
+THREADS :
+1. a thread exists within a process.
+
+2. threads of a process shares the process' resources(including its heap space).
+So, process can't directly access the memory of another process, but, threads can share the same heap space.
+All the threads belonging to a process can read and write the heap memory. 
+
+3. each thread has its own STACK and registers.
+
+4. a thread is a particular execution path of a process. When one thread modifies a process resource, 
+the change is immediately visible to the sibling threads.
