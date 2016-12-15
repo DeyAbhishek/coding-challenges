@@ -17,9 +17,9 @@ public class FindIfTheWholeWordCanBeBrokenIntoOneOrMoreDictionaryWords {
 		dictionary.add("Apple");
 		dictionary.add("Bee");
 		Result result = getResult("AppleBee", dictionary, "");
-		System.out.println(result.words);
+		System.out.println(result.words);  // Apple Bee
 		result = getResult("AppleeBeee", dictionary, "");
-		System.out.println(result.words);
+		System.out.println(result.words);  // Empty String
 	}
 	
 	private static Result getResult(String input, ArrayList<String> dictionary, String str) {
