@@ -50,7 +50,7 @@ Time Complexity => O(n)
 
 import java.util.HashMap;
  
-class LargestSubArray1 
+class SubarrayWithEqualZeroesAndOnes2
 {
  
     // Returns largest subarray with equal number of 0s and 1s
