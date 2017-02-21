@@ -26,7 +26,7 @@ If sum becomes 0, then size of this subarray is compared with largest size so fa
 Time Complexity => O(n * n)
 Space Complexity => O ( 1 )
 */
-class SubarrayWithEqualZeroesAndOnes {
+public class SubarrayWithEqualZeroesAndOnes {
  
     // This function Prints the starting and ending
     // indexes of the largest subarray with equal  
