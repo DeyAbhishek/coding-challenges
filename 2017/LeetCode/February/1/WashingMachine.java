@@ -54,7 +54,7 @@ public class WashingMachine {
             if (machines[i] > target) {
                 int surplusDresses = machines[i] - target;
                 count[i] += surplusDresses;
-                machines[i + 1] += surplisDresses;
+                machines[i + 1] += surplusDresses;
             } else {
                 int deficiency = target - machines[i];
                 count[i + 1] = deficiency;
