@@ -1,3 +1,4 @@
+/*
 536. Construct Binary Tree from String My SubmissionsBack To Contest
 You need to construct a binary tree from a string consisting of parenthesis and integers.
 
@@ -16,6 +17,7 @@ Output: return the tree root node representing the following tree:
   3   1 5   
 Note:
 There will only be '(', ')', '-' and '0' ~ '9' in the input string.
+*/
 
 /**
  * Definition for a binary tree node.
