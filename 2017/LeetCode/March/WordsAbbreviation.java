@@ -42,3 +42,13 @@ public class WordsAbbreviation {
         }
         return Arrays.asList(ans);
     }
+    
+    private String makeString(String s, int k) {
+        if (k>=s.length()-2) return s;
+        StringBuilder builder=new StringBuilder();
+        builder.append(s.substring(0, k));
+        builder.append(s.length()-1-k);
+        builder.append(s.charAt(s.length()-1));
+        return builder.toString();
+    }
+}
