@@ -29,7 +29,42 @@ There will only be '(', ')', '-' and '0' ~ '9' in the input string.
  * }
  */
 public class String2Tree {
-    public TreeNode str2tree(String s) {
+       
+       public TreeNode str2tree(String s) {
+
+        if (s == null || s.length() == 0) return null;
+
+        int i = s.indexOf('(');
+
+        int a = 0;
+
+        if (i != -1) a = Integer.parseInt(s.substring(0, i));
+        else a = Integer.parseInt(s);
+
+        TreeNode root = new TreeNode(a);
+
+        int len = s.length();
+
+        if (i == -1) return root;
+
+        int bracketCount = 0;
+
+        int index = i;
+        while (index < len) {
+            if (s.charAt(index) == '(') bracketCount++;
+            else if (s.charAt(index) == ')') bracketCount--;
+            index++;
+            if (bracketCount == 0) break;
+        }
+
+        root.left = str2tree(s.substring(i + 1, index - 1));
+        root.right = index + 1 < len - 1 ? str2tree(s.substring(index + 1, len - 1)) : null;
+
+        return root;
+       }
+       
+/*
+       public TreeNode str2tree(String s) {
         if (s.startsWith("(")) s=s.substring(1, s.length()-1);
         if (s.length()==0) return null;
         int index=s.indexOf("(");
@@ -46,5 +81,7 @@ public class String2Tree {
         treeNode.left=str2tree(s.substring(index, j+1));
         treeNode.right=str2tree(s.substring(j+1));
         return treeNode;
-    }
+       }
+       
+*/
 }
