@@ -62,6 +62,5 @@ public class MaximumBinaryTree {
         Collections.sort(list);
         return list.get(list.size() - 1);
     }
-    
-    
+      
 }
