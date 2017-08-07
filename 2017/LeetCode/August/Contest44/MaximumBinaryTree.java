@@ -34,7 +34,7 @@ The size of the given array will be in the range [1,1000].
  * }
  */
 public class MaximumBinaryTree {
-    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>(); // mapping element to their indices
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
