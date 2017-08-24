@@ -12,9 +12,13 @@
 class EqualTreePartition {
     public boolean checkEqualTree(TreeNode root) {
         if (root == null) return false;
-        if (root.left == null && root.right == null) return false;
+        
+        //return false if the root has no child at all, i.e, a tree with only one node
+        if (root.left == null && root.right == null) return false;  
+        
         int sum = sum(root, new IntegerWrapper());
         if (sum % 2 != 0) return false;
+        
         int half = sum / 2;
         return checkSum(root, half);
     }
