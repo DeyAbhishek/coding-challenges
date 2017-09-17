@@ -31,7 +31,7 @@ public class ValidParenthesisString {
     
     private boolean isvalidParenthesisStringHelper(String input, int leftParenthesisLeftToBeMatched) {
     
-        //while scanning the input string from left to right we cannot have 
+        //while scanning the input string from left to right, at any point of time we cannot have 
         //no. of closing brackets ')' > no. of opening brackets '('
         if (leftParenthesisLeftToBeMatched < 0) return false;
         
