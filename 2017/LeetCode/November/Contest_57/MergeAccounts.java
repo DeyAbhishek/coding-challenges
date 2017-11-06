@@ -22,7 +22,6 @@ The length of accounts[i][j] will be in the range [1, 30].
 
 class MergeAccounts {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        //Map<String, List<String>> map = map(accounts);
         List<List<String>> acc = new ArrayList<List<String>>();
         for (List<String> l : accounts) {
             acc.add(l);
@@ -45,9 +44,12 @@ class MergeAccounts {
                             delete.add(lst);
                          }                        
                     } 
-                    list = sort(list);                
+                                    
                 }
             }
+            List<String> l = sort(list);
+            list.clear();
+            list.addAll(l);
         }
         for (List<String> ac : delete) {
             accounts.remove(ac);
@@ -69,24 +71,4 @@ class MergeAccounts {
         }
         return res;
     }
-    
-//     private Map<String, List<String>> map(List<List<String>> accounts) {
-//         Map<String, List<String>> map = new HashMap<String, List<String>>();
-//         for (List<String> account : accounts) {
-//             addToLast(account, "Unproccessed");
-//             String name = account.get(0);
-//             map.put(name, account);
-//         }
-//         return map;
-//     }
-    
-//     private void addToLast(List<String> list, String input) {
-//         list.add(input);
-//     }
-    
-//     private String getLast(List<String> list) {
-//         int len =  list.size();
-//         return list.get(len - 1);
-//     }
-    
 }
