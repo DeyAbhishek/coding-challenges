@@ -21,54 +21,54 @@ The length of accounts[i] will be in the range [1, 10].
 The length of accounts[i][j] will be in the range [1, 30].
 */
 class MergeAccounts {
-    public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        List<List<String>> acc = new ArrayList<List<String>>();
-        for (List<String> l : accounts) {
-            acc.add(l);
-        }
-        List<List<String>> delete = new ArrayList<List<String>>();
-        int count = -1;
-        for (List<String> list : accounts) {
-            count++;
-            for (int i = 1; i < list.size(); i++) {
-                String email = list.get(i);    
-                for (int k = count + 1; k < acc.size(); k++) {
-                    List<String> lst = acc.get(k);
-                    if (lst != list && lst.get(0).equals(list.get(0))) {
-                        if (lst.contains(email)) {
-                            for (int j = 1; j < lst.size(); j++) {
-                                if (!list.contains(lst.get(j))) {
-                                    list.add(lst.get(j));
-                                }
-                            }
-                            delete.add(lst);
-                         }                        
-                    } 
-                                    
+     public List<List<String>> accountsMerge(List<List<String>> accounts) {
+        Map<String, List<String>> graph = new HashMap<String, List<String>>();
+        Map<String, String> emailToName = new HashMap<String, String>();
+        
+        for (List<String> acc : accounts) {
+            String name = "";
+            for (String email : acc) {
+                if (name.equals("")) {
+                    name = email;
+                    continue;
+                } 
+                emailToName.put(email, name);
+                if (!graph.containsKey(email)) {
+                    graph.put(email, new ArrayList<String>());
                 }
+                if (!graph.containsKey(acc.get(1))) {
+                    graph.put(acc.get(1), new ArrayList<String>());
+                }
+                graph.get(email).add(acc.get(1));
+                graph.get(acc.get(1)).add(email);
             }
-            List<String> l = sort(list);
-            list.clear();
-            list.addAll(l);
+        } // graph formation ends
+        
+        List<List<String>> result = new ArrayList<List<String>>(); 
+        Set<String> seen = new HashSet<String>();
+        for (String email : graph.keySet()) {
+            if (!seen.contains(email)) {
+                List<String> components = new ArrayList<String>();
+                seen.add(email);
+                Stack<String> stack = new Stack<String>();
+                stack.push(email);
+                components.add(email);
+                while (!stack.isEmpty()) {
+                    String parent = stack.pop();
+                    List<String> childSet = graph.get(parent);
+                    for (String child : childSet) {
+                        if (!seen.contains(child)) {
+                            seen.add(child);
+                            stack.push(child);
+                            components.add(child);
+                        }
+                    }
+                }
+                Collections.sort(components);
+                components.add(0, emailToName.get(email));
+                result. add(components);
+            }
         }
-        for (List<String> ac : delete) {
-            accounts.remove(ac);
-        }
-        return accounts;
-    }
-    
-    
-    private List<String> sort(List<String> account) {
-        List<String> lst =  new ArrayList<String>();
-        for (int i = 1; i < account.size(); i++) {
-            lst.add(account.get(i));    
-        }
-        Collections.sort(lst);
-        List<String> res = new ArrayList<String>();
-        res.add(account.get(0));
-        for (int i = 0; i < lst.size(); i++) {
-            res.add(lst.get(i));
-        }
-        return res;
+        return result;
     }
 }
