@@ -18,13 +18,9 @@ The length of accounts[i][j] will be in the range [1, 30].
 */
 
 /*
-Intuition
+Intuition:
 As in other approach in MergeAccount.java, our problem comes down to finding the connected components of a graph. 
-This is a natural fit for a Disjoint Set Union (DSU) structure.
-Algorithm
-As in Approach #1, draw edges between emails if they occur in the same account. 
-For easier interoperability between our DSU template, we will map each email to some integer index by using emailToID. 
-Then, dsu.find(email) will tell us a unique id representing what component that email is in.
+This is a natural fit for a Union-Find structure.
 */
 
 public class MergeAccountsUsingUnionFind {
