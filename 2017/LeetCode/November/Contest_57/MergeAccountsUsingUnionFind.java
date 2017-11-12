@@ -111,5 +111,5 @@ public class MergeAccountsUsingUnionFind {
 Complexity Analysis
 Time Complexity: O(AlogA), where A = ∑ai and ai is the length of accounts[i]. 
 If we used union-by-rank, this complexity improves to O(Aα(A))≈O(A), where α is the Inverse-Ackermann function.
-Space Complexity: O(A), the space used by our DSU structure.
+Space Complexity: O(A), the space used by our Union-Find data structure.
 */
