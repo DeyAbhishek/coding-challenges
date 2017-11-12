@@ -25,8 +25,6 @@ Algorithm
 As in Approach #1, draw edges between emails if they occur in the same account. 
 For easier interoperability between our DSU template, we will map each email to some integer index by using emailToID. 
 Then, dsu.find(email) will tell us a unique id representing what component that email is in.
-For more information on DSU, please look at Approach #2 in the article here. 
-For brevity, the solutions showcased below do not use union-by-rank.
 */
 
 public class MergeAccountsUsingUnionFind {
