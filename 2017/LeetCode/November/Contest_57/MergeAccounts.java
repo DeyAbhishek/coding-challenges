@@ -72,3 +72,12 @@ class MergeAccounts {
         return result;
     }
 }
+
+
+/*
+Complexity Analysis
+
+Time Complexity: O(∑ailogai), where ai is the length of accounts[i]. Without the log factor, this is the complexity to build the graph and search for each component. The log factor is for sorting each component at the end.
+
+Space Complexity: O(∑ai), the space used by our graph and our search.
+*/
