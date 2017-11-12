@@ -63,6 +63,14 @@ public class MergeAccountsUsingUnionFind {
         public Map<String, Integer> rootToSize = new HashMap<String, Integer>();
         
         public String find(String str) {
+            // Initialization when a node is encountered for first time:
+            // every node should be its own parnt initially
+            // every node should belong to its own component-set innitially
+            if (!parents.containsKey(str)) {
+                parents.put(str, str);
+                rootToSize.put(str, 1);
+            }
+            
             while (!parents.get(str).equals(str)) {
                 str = parents.get(str);
             }
@@ -70,15 +78,6 @@ public class MergeAccountsUsingUnionFind {
         }
         
         public void union(String str1, String str2) {
-            if (!parents.containsKey(str1)) {
-                parents.put(str1, str1);
-                rootToSize.put(str1, 1);
-            }
-            
-            if (!parents.containsKey(str2)) {
-                parents.put(str2, str2);
-                rootToSize.put(str2, 1);
-            }
             
             String root1 = find(str1);
             String root2 = find(str2);
@@ -86,6 +85,7 @@ public class MergeAccountsUsingUnionFind {
             int size1 = rootToSize.get(str1);
             int size2 = rootToSize.get(str2);
             int newSize = size1;
+            
             if (!str1.equals(str2)) {
                 newSize += size2;
             }
