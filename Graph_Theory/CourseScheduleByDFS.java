@@ -31,7 +31,7 @@ Topological sort could also be done via BFS.
 
 */
 
-class CourseSchedule {
+class CourseScheduleByDFS {
     
     Set<Integer> visiting = new HashSet<Integer>();
     Set<Integer> visited = new HashSet<Integer>();
