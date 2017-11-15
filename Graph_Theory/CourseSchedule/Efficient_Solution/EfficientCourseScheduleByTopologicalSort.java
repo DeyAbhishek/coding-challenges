@@ -4,7 +4,7 @@ public class EfficientCourseScheduleByTopologicalSort {
         
         int[] indegree = new int[numCourses];
         
-        Queue<Integer> verticesWithNoInboundEdge = new LinkedList<Integer>();
+        Queue<Integer> currentVerticesWithNoInboundEdge = new LinkedList<Integer>();
         
         for(int[] pair:prerequisites){
             indegree[pair[1]]++;
@@ -12,18 +12,18 @@ public class EfficientCourseScheduleByTopologicalSort {
         
         for(int i=0;i<indegree.length;i++){
             if(indegree[i]==0){
-                verticesWithNoInboundEdge.add(i);
+                currentVerticesWithNoInboundEdge.add(i);
             }
         }
         
-        while(!verticesWithNoInboundEdge.isEmpty()){
+        while(!currentVerticesWithNoInboundEdge.isEmpty()){
             numCourses--;
-            int course = verticesWithNoInboundEdge.poll();
+            int course = currentVerticesWithNoInboundEdge.poll();
             for(int[] pair:prerequisites){
                 if(pair[0]==course){
                     indegree[pair[1]]--;
                     if(indegree[pair[1]]==0){
-                        verticesWithNoInboundEdge.add(pair[1]);
+                        currentVerticesWithNoInboundEdge.add(pair[1]);
                     }
                 }
             }
