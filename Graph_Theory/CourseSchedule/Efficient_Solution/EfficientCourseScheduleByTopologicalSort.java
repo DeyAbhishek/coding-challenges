@@ -17,8 +17,11 @@ public class EfficientCourseScheduleByTopologicalSort {
         }
         
         while(!currentVerticesWithNoInboundEdge.isEmpty()){
+            
             numCourses--;
+            
             int course = currentVerticesWithNoInboundEdge.poll();
+            
             for(int[] pair:prerequisites){
                 if(pair[0]==course){
                     indegree[pair[1]]--;
@@ -27,7 +30,8 @@ public class EfficientCourseScheduleByTopologicalSort {
                     }
                 }
             }
-        }
+            
+        } // end of while loop
         
         return numCourses==0;
     }
