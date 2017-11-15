@@ -22,7 +22,7 @@ public class EfficientCourseScheduleByTopologicalSort {
             
             int course = currentVerticesWithNoInboundEdge.poll();
             
-            for(int[] pair:prerequisites){
+            for(int[] pair : prerequisites){
                 if(pair[0]==course){
                     indegree[pair[1]]--;
                     if(indegree[pair[1]]==0){
