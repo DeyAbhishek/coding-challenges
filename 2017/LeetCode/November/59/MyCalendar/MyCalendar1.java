@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/my-calendar-i
 
-private static class MyCalendar2 {
+private static class MyCalendar1 {
 
         List<int[]> books = new ArrayList<>();
         
