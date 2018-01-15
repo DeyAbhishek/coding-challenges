@@ -5,7 +5,7 @@ The big idea is pretty simple:
 Each time of book, instead of fail a book when there is 1 or more overlap with existing books as in MyCalendar I, 
 we just want to make sure these overlaps does not overlap - having overlap is now ok, 
 but overlapped period cannot be overlapped again.
-So we just need to keep track of all the overlaps with any previous books
+So we just need to keep track of all the overlaps with any previous books.
 
 MyCalendar I can be reused to track the overlaps during each book.
 
